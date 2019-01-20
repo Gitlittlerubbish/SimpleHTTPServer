@@ -1,1 +1,2 @@
-gcc -o shttp main.c
+make clean
+make all
