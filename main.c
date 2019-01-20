@@ -6,11 +6,11 @@ int initServer(const char *ip, const int port)
 {
 	int tcheck = 0;
 
-	//创建套接字
+	//create server socket.
 	int sock = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
 	check(sock != -1, "Socket create error.");
 
-	//套接字绑定ip、port等
+	//insert ip&port
 	struct sockaddr_in serv_sockaddr;
 	memset(&serv_sockaddr, 0, sizeof(struct sockaddr_in));
 	serv_sockaddr.sin_family = AF_INET;
