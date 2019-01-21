@@ -10,6 +10,11 @@ int initServer(const char *ip, const int port)
 	int sock = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
 	check(sock != -1, "Socket create error.");
 
+	//reuse, wait for TIME_WAIT
+	//int opt = 1;
+	//setsockopt(sock, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt));
+
+
 	//insert ip&port
 	struct sockaddr_in serv_sockaddr;
 	memset(&serv_sockaddr, 0, sizeof(struct sockaddr_in));
